@@ -1,4 +1,7 @@
-# Heading 1
+# User Stories
+
+As a user, I want to be able to roll different dice as the game requires. 
+
 
 ## Heading 2
 
