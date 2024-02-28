@@ -19,13 +19,31 @@
 </body>
 
 <script>
-    function rollDice(){
-        let diceType = document.getElementById("diceType").value;
-        // console.log(diceType);
-        let result = Math.ceil(Math.random() * diceType);
-        console.log(result);
-        document.getElementById('result').innerHTML = `You rolled a ${result}`;
+    // function rollDice(){
+    //     let diceType = document.getElementById("diceType").value;
+    //     // console.log(diceType);
+    //     let result = Math.ceil(Math.random() * diceType);
+    //     console.log(result);
+    //     document.getElementById('result').innerHTML = `You rolled a ${result}`;
+    // }
+       
+    function rollDice(diceType) {
+    let result = Math.ceil(Math.random() * diceType);
+    return result; // Return the result for easier testing
     }
+    // Mock Math.random
+    Math.random = () => 0.5;
+    // Run a simple test
+    let diceType = 10; // D6 dice
+    let expected = 5; // Expected result with Math.random() mocked to 0.5
+    let actual = rollDice(diceType);
+    if (actual === expected) {
+    console.log("Test passed: Correct result");
+    } else {
+    console.error(`Test failed: Expected ${expected}, but got ${actual}`);
+    }
+
+
 </script>
 
 </html>
